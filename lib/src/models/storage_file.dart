@@ -19,14 +19,14 @@ class StorageFile {
   factory StorageFile.fromJson(Map<String, dynamic> json) {
     return StorageFile(
       id: json['id'] as String,
-      fileName: json['file_name'] as String,
-      fileSize: json['file_size'] as int,
-      mimeType: json['mime_type'] as String?,
+      fileName: json['fileName'] as String,
+      fileSize: json['fileSize'] as int,
+      mimeType: json['mimeType'] as String?,
       folder: json['folder'] as String? ?? '/',
       metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: DateTime.parse(json['created_at'] as String),
-      expiresAt: json['expires_at'] != null
-          ? DateTime.parse(json['expires_at'] as String)
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      expiresAt: json['expiresAt'] != null
+          ? DateTime.parse(json['expiresAt'] as String)
           : null,
     );
   }
@@ -59,13 +59,13 @@ class StorageFile {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'file_name': fileName,
-      'file_size': fileSize,
-      'mime_type': mimeType,
+      'fileName': fileName,
+      'fileSize': fileSize,
+      'mimeType': mimeType,
       'folder': folder,
       'metadata': metadata,
-      'created_at': createdAt.toIso8601String(),
-      'expires_at': expiresAt?.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
+      'expiresAt': expiresAt?.toIso8601String(),
     };
   }
 

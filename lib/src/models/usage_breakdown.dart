@@ -22,9 +22,9 @@ class UsageBreakdown {
     );
 
     return UsageBreakdown(
-      totalSize: json['total_size'] as int,
-      totalSizeFormatted: json['total_size_formatted'] as String,
-      totalFiles: json['total_files'] as int,
+      totalSize: json['totalSize'] as int,
+      totalSizeFormatted: json['totalSizeFormatted'] as String,
+      totalFiles: json['totalFiles'] as int,
       categories: categories,
     );
   }
@@ -44,9 +44,9 @@ class UsageBreakdown {
   /// Converts this [UsageBreakdown] to a JSON map.
   Map<String, dynamic> toJson() {
     return {
-      'total_size': totalSize,
-      'total_size_formatted': totalSizeFormatted,
-      'total_files': totalFiles,
+      'totalSize': totalSize,
+      'totalSizeFormatted': totalSizeFormatted,
+      'totalFiles': totalFiles,
       'categories': categories.map((key, value) => MapEntry(key, value.toJson())),
     };
   }
@@ -84,7 +84,7 @@ class UsageCategory {
   factory UsageCategory.fromJson(Map<String, dynamic> json) {
     return UsageCategory(
       size: json['size'] as int,
-      sizeFormatted: json['size_formatted'] as String,
+      sizeFormatted: json['sizeFormatted'] as String,
       count: json['count'] as int,
       percentage: (json['percentage'] as num).toDouble(),
     );
@@ -106,7 +106,7 @@ class UsageCategory {
   Map<String, dynamic> toJson() {
     return {
       'size': size,
-      'size_formatted': sizeFormatted,
+      'sizeFormatted': sizeFormatted,
       'count': count,
       'percentage': percentage,
     };

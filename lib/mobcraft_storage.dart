@@ -1,4 +1,4 @@
-/// Flutter SDK for Mobcraft Storage - Telegram-based cloud storage with freemium tiers.
+/// Flutter SDK for Mobcraft Storage - cloud storage with freemium tiers.
 ///
 /// This library provides a simple and intuitive API for integrating
 /// Mobcraft Storage into your Flutter applications.

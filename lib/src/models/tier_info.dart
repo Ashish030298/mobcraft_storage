@@ -22,18 +22,18 @@ class TierInfo {
   /// Creates a [TierInfo] from a JSON map.
   factory TierInfo.fromJson(Map<String, dynamic> json) {
     return TierInfo(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      storageLimit: json['storage_limit'] as int,
-      storageLimitFormatted: json['storage_limit_formatted'] as String,
-      fileSizeLimit: json['file_size_limit'] as int,
-      fileSizeLimitFormatted: json['file_size_limit_formatted'] as String,
-      price: (json['price'] as num).toDouble(),
-      currency: json['currency'] as String,
-      billingPeriod: json['billing_period'] as String,
+      id: json['tier'] as String,
+      name: (json['tier'] as String).toUpperCase(),
+      storageLimit: json['storageLimit'] as int,
+      storageLimitFormatted: json['storageLimitFormatted'] as String,
+      fileSizeLimit: json['fileSizeLimit'] as int,
+      fileSizeLimitFormatted: json['fileSizeLimitFormatted'] as String,
+      price: (json['priceMonthly'] as num).toDouble(),
+      currency: 'USD',
+      billingPeriod: 'monthly',
       features: (json['features'] as List<dynamic>).cast<String>(),
-      isPopular: json['is_popular'] as bool? ?? false,
-      isCurrent: json['is_current'] as bool? ?? false,
+      isPopular: json['isPopular'] as bool? ?? false,
+      isCurrent: json['isCurrent'] as bool? ?? false,
     );
   }
 
@@ -55,7 +55,7 @@ class TierInfo {
   /// Maximum file size in human-readable format.
   final String fileSizeLimitFormatted;
 
-  /// Price for this tier (0 for free tier).
+  /// Price for this tier (0 for free tier, -1 for enterprise/custom).
   final double price;
 
   /// Currency code (e.g., 'USD', 'EUR').
@@ -76,18 +76,15 @@ class TierInfo {
   /// Converts this [TierInfo] to a JSON map.
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'name': name,
-      'storage_limit': storageLimit,
-      'storage_limit_formatted': storageLimitFormatted,
-      'file_size_limit': fileSizeLimit,
-      'file_size_limit_formatted': fileSizeLimitFormatted,
-      'price': price,
-      'currency': currency,
-      'billing_period': billingPeriod,
+      'tier': id,
+      'storageLimit': storageLimit,
+      'storageLimitFormatted': storageLimitFormatted,
+      'fileSizeLimit': fileSizeLimit,
+      'fileSizeLimitFormatted': fileSizeLimitFormatted,
+      'priceMonthly': price,
       'features': features,
-      'is_popular': isPopular,
-      'is_current': isCurrent,
+      'isPopular': isPopular,
+      'isCurrent': isCurrent,
     };
   }
 
@@ -126,7 +123,11 @@ class TierInfo {
   bool get isFree => price == 0;
 
   /// Returns the formatted price string.
-  String get priceFormatted => isFree ? 'Free' : '$currency ${price.toStringAsFixed(2)}/$billingPeriod';
+  String get priceFormatted {
+    if (isFree) return 'Free';
+    if (price < 0) return 'Custom';
+    return '$currency ${price.toStringAsFixed(2)}/$billingPeriod';
+  }
 
   @override
   String toString() => 'TierInfo(name: $name, price: $priceFormatted, storage: $storageLimitFormatted)';

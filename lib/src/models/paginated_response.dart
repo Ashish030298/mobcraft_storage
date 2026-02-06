@@ -29,7 +29,7 @@ class PaginatedResponse<T> {
       total: json['total'] as int,
       limit: json['limit'] as int,
       offset: json['offset'] as int,
-      hasMore: json['has_more'] as bool,
+      hasMore: json['hasMore'] as bool,
     );
   }
 
@@ -57,7 +57,7 @@ class PaginatedResponse<T> {
       'total': total,
       'limit': limit,
       'offset': offset,
-      'has_more': hasMore,
+      'hasMore': hasMore,
     };
   }
 

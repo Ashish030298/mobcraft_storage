@@ -22,17 +22,17 @@ class StorageQuota {
   factory StorageQuota.fromJson(Map<String, dynamic> json) {
     return StorageQuota(
       tier: json['tier'] as String,
-      storageUsed: json['storage_used'] as int,
-      storageLimit: json['storage_limit'] as int,
-      storageUsedFormatted: json['storage_used_formatted'] as String,
-      storageLimitFormatted: json['storage_limit_formatted'] as String,
-      storagePercentage: json['storage_percentage'] as int,
-      filesCount: json['files_count'] as int,
-      fileSizeLimit: json['file_size_limit'] as int,
-      fileSizeLimitFormatted: json['file_size_limit_formatted'] as String,
+      storageUsed: json['storageUsed'] as int,
+      storageLimit: json['storageLimit'] as int,
+      storageUsedFormatted: json['storageUsedFormatted'] as String,
+      storageLimitFormatted: json['storageLimitFormatted'] as String,
+      storagePercentage: json['storagePercentage'] as int,
+      filesCount: json['filesCount'] as int,
+      fileSizeLimit: json['fileSizeLimit'] as int,
+      fileSizeLimitFormatted: json['fileSizeLimitFormatted'] as String,
       features: (json['features'] as List<dynamic>).cast<String>(),
-      subscriptionExpiresAt: json['subscription_expires_at'] != null
-          ? DateTime.parse(json['subscription_expires_at'] as String)
+      subscriptionExpiresAt: json['subscriptionExpiresAt'] != null
+          ? DateTime.parse(json['subscriptionExpiresAt'] as String)
           : null,
     );
   }
@@ -74,16 +74,16 @@ class StorageQuota {
   Map<String, dynamic> toJson() {
     return {
       'tier': tier,
-      'storage_used': storageUsed,
-      'storage_limit': storageLimit,
-      'storage_used_formatted': storageUsedFormatted,
-      'storage_limit_formatted': storageLimitFormatted,
-      'storage_percentage': storagePercentage,
-      'files_count': filesCount,
-      'file_size_limit': fileSizeLimit,
-      'file_size_limit_formatted': fileSizeLimitFormatted,
+      'storageUsed': storageUsed,
+      'storageLimit': storageLimit,
+      'storageUsedFormatted': storageUsedFormatted,
+      'storageLimitFormatted': storageLimitFormatted,
+      'storagePercentage': storagePercentage,
+      'filesCount': filesCount,
+      'fileSizeLimit': fileSizeLimit,
+      'fileSizeLimitFormatted': fileSizeLimitFormatted,
       'features': features,
-      'subscription_expires_at': subscriptionExpiresAt?.toIso8601String(),
+      'subscriptionExpiresAt': subscriptionExpiresAt?.toIso8601String(),
     };
   }
 

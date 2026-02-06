@@ -1,6 +1,6 @@
 # Mobcraft Storage
 
-A Flutter SDK for Mobcraft Storage - Telegram-based cloud storage with freemium tiers.
+A Flutter SDK for Mobcraft Storage - cloud storage with freemium tiers.
 
 [![pub package](https://img.shields.io/pub/v/mobcraft_storage.svg)](https://pub.dev/packages/mobcraft_storage)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -262,7 +262,7 @@ For development or testing with a different API endpoint:
 ```dart
 final storage = MobcraftStorage(
   apiKey: 'your_api_key',
-  baseUrl: 'https://staging.storage.mobcraft.io',
+  baseUrl: 'https://staging.storage.mobcraft.in',
 );
 ```
 
@@ -284,6 +284,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- Documentation: [https://mobcraft.io/docs](https://mobcraft.io/docs)
+- Documentation: [https://mobcraft.in/docs](https://mobcraft.in/docs)
 - Issues: [https://github.com/mobcraft/mobcraft_storage_flutter/issues](https://github.com/mobcraft/mobcraft_storage_flutter/issues)
-- Email: support@mobcraft.io
+- Email: support@mobcraft.in

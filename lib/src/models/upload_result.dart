@@ -17,13 +17,13 @@ class UploadResult {
   /// Creates an [UploadResult] from a JSON map.
   factory UploadResult.fromJson(Map<String, dynamic> json) {
     return UploadResult(
-      fileId: json['file_id'] as String,
-      fileName: json['file_name'] as String,
-      fileSize: json['file_size'] as int,
-      mimeType: json['mime_type'] as String?,
-      downloadUrl: json['download_url'] as String,
+      fileId: json['fileId'] as String,
+      fileName: json['fileName'] as String,
+      fileSize: json['fileSize'] as int,
+      mimeType: json['mimeType'] as String?,
+      downloadUrl: json['downloadUrl'] as String,
       folder: json['folder'] as String? ?? '/',
-      createdAt: DateTime.parse(json['created_at'] as String),
+      createdAt: DateTime.parse(json['createdAt'] as String),
     );
   }
 
@@ -51,13 +51,13 @@ class UploadResult {
   /// Converts this [UploadResult] to a JSON map.
   Map<String, dynamic> toJson() {
     return {
-      'file_id': fileId,
-      'file_name': fileName,
-      'file_size': fileSize,
-      'mime_type': mimeType,
-      'download_url': downloadUrl,
+      'fileId': fileId,
+      'fileName': fileName,
+      'fileSize': fileSize,
+      'mimeType': mimeType,
+      'downloadUrl': downloadUrl,
       'folder': folder,
-      'created_at': createdAt.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
     };
   }
 

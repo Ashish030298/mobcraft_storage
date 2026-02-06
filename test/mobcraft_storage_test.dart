@@ -11,13 +11,13 @@ void main() {
     test('fromJson creates correct instance', () {
       final json = {
         'id': 'file123',
-        'file_name': 'test.png',
-        'file_size': 1024,
-        'mime_type': 'image/png',
+        'fileName': 'test.png',
+        'fileSize': 1024,
+        'mimeType': 'image/png',
         'folder': '/images',
         'metadata': {'key': 'value'},
-        'created_at': '2024-01-01T00:00:00.000Z',
-        'expires_at': '2024-12-31T23:59:59.000Z',
+        'createdAt': '2024-01-01T00:00:00.000Z',
+        'expiresAt': '2024-12-31T23:59:59.000Z',
       };
 
       final file = StorageFile.fromJson(json);
@@ -47,9 +47,9 @@ void main() {
       final json = file.toJson();
 
       expect(json['id'], 'file123');
-      expect(json['file_name'], 'test.png');
-      expect(json['file_size'], 1024);
-      expect(json['mime_type'], 'image/png');
+      expect(json['fileName'], 'test.png');
+      expect(json['fileSize'], 1024);
+      expect(json['mimeType'], 'image/png');
       expect(json['folder'], '/images');
     });
 
@@ -110,13 +110,13 @@ void main() {
   group('UploadResult', () {
     test('fromJson creates correct instance', () {
       final json = {
-        'file_id': 'file123',
-        'file_name': 'test.png',
-        'file_size': 1024,
-        'mime_type': 'image/png',
-        'download_url': 'https://example.com/file123',
+        'fileId': 'file123',
+        'fileName': 'test.png',
+        'fileSize': 1024,
+        'mimeType': 'image/png',
+        'downloadUrl': 'https://example.com/file123',
         'folder': '/images',
-        'created_at': '2024-01-01T00:00:00.000Z',
+        'createdAt': '2024-01-01T00:00:00.000Z',
       };
 
       final result = UploadResult.fromJson(json);
@@ -132,16 +132,16 @@ void main() {
     test('fromJson creates correct instance', () {
       final json = {
         'tier': 'pro',
-        'storage_used': 1073741824,
-        'storage_limit': 10737418240,
-        'storage_used_formatted': '1 GB',
-        'storage_limit_formatted': '10 GB',
-        'storage_percentage': 10,
-        'files_count': 100,
-        'file_size_limit': 104857600,
-        'file_size_limit_formatted': '100 MB',
+        'storageUsed': 1073741824,
+        'storageLimit': 10737418240,
+        'storageUsedFormatted': '1 GB',
+        'storageLimitFormatted': '10 GB',
+        'storagePercentage': 10,
+        'filesCount': 100,
+        'fileSizeLimit': 104857600,
+        'fileSizeLimitFormatted': '100 MB',
         'features': ['feature1', 'feature2'],
-        'subscription_expires_at': '2024-12-31T23:59:59.000Z',
+        'subscriptionExpiresAt': '2024-12-31T23:59:59.000Z',
       };
 
       final quota = StorageQuota.fromJson(json);
@@ -177,23 +177,23 @@ void main() {
         'items': [
           {
             'id': 'file1',
-            'file_name': 'test1.png',
-            'file_size': 1024,
+            'fileName': 'test1.png',
+            'fileSize': 1024,
             'folder': '/',
-            'created_at': '2024-01-01T00:00:00.000Z',
+            'createdAt': '2024-01-01T00:00:00.000Z',
           },
           {
             'id': 'file2',
-            'file_name': 'test2.png',
-            'file_size': 2048,
+            'fileName': 'test2.png',
+            'fileSize': 2048,
             'folder': '/',
-            'created_at': '2024-01-02T00:00:00.000Z',
+            'createdAt': '2024-01-02T00:00:00.000Z',
           },
         ],
         'total': 50,
         'limit': 20,
         'offset': 0,
-        'has_more': true,
+        'hasMore': true,
       };
 
       final response = PaginatedResponse.fromJson(json, StorageFile.fromJson);
@@ -266,14 +266,14 @@ void main() {
             jsonEncode({
               'data': {
                 'tier': 'free',
-                'storage_used': 1024,
-                'storage_limit': 1073741824,
-                'storage_used_formatted': '1 KB',
-                'storage_limit_formatted': '1 GB',
-                'storage_percentage': 0,
-                'files_count': 1,
-                'file_size_limit': 26214400,
-                'file_size_limit_formatted': '25 MB',
+                'storageUsed': 1024,
+                'storageLimit': 1073741824,
+                'storageUsedFormatted': '1 KB',
+                'storageLimitFormatted': '1 GB',
+                'storagePercentage': 0,
+                'filesCount': 1,
+                'fileSizeLimit': 26214400,
+                'fileSizeLimitFormatted': '25 MB',
                 'features': ['basic_storage'],
               },
             }),
@@ -290,17 +290,17 @@ void main() {
                   'items': [
                     {
                       'id': 'file1',
-                      'file_name': 'test.png',
-                      'file_size': 1024,
-                      'mime_type': 'image/png',
+                      'fileName': 'test.png',
+                      'fileSize': 1024,
+                      'mimeType': 'image/png',
                       'folder': '/',
-                      'created_at': '2024-01-01T00:00:00.000Z',
+                      'createdAt': '2024-01-01T00:00:00.000Z',
                     },
                   ],
                   'total': 1,
                   'limit': 20,
                   'offset': 0,
-                  'has_more': false,
+                  'hasMore': false,
                 },
               }),
               200,
@@ -315,11 +315,11 @@ void main() {
               jsonEncode({
                 'data': {
                   'id': 'file1',
-                  'file_name': 'test.png',
-                  'file_size': 1024,
-                  'mime_type': 'image/png',
+                  'fileName': 'test.png',
+                  'fileSize': 1024,
+                  'mimeType': 'image/png',
                   'folder': '/',
-                  'created_at': '2024-01-01T00:00:00.000Z',
+                  'createdAt': '2024-01-01T00:00:00.000Z',
                 },
               }),
               200,
@@ -347,18 +347,15 @@ void main() {
             jsonEncode({
               'data': [
                 {
-                  'id': 'free',
-                  'name': 'Free',
-                  'storage_limit': 1073741824,
-                  'storage_limit_formatted': '1 GB',
-                  'file_size_limit': 26214400,
-                  'file_size_limit_formatted': '25 MB',
-                  'price': 0,
-                  'currency': 'USD',
-                  'billing_period': 'monthly',
+                  'tier': 'free',
+                  'storageLimit': 1073741824,
+                  'storageLimitFormatted': '1 GB',
+                  'fileSizeLimit': 26214400,
+                  'fileSizeLimitFormatted': '25 MB',
+                  'priceMonthly': 0,
                   'features': ['basic_storage'],
-                  'is_popular': false,
-                  'is_current': true,
+                  'isPopular': false,
+                  'isCurrent': true,
                 },
               ],
             }),
@@ -372,7 +369,7 @@ void main() {
 
       storage = MobcraftStorage(
         apiKey: 'test_api_key',
-        baseUrl: 'https://test.mobcraft.io',
+        baseUrl: 'https://test.mobcraft.in',
         httpClient: mockClient,
       );
     });
@@ -417,7 +414,7 @@ void main() {
       final tiers = await storage.getTiers();
 
       expect(tiers.length, 1);
-      expect(tiers.first.name, 'Free');
+      expect(tiers.first.name, 'FREE');
       expect(tiers.first.isFree, true);
     });
 
@@ -430,13 +427,13 @@ void main() {
           return http.Response(
             jsonEncode({
               'data': {
-                'file_id': 'newfile',
-                'file_name': 'test.txt',
-                'file_size': 11,
-                'mime_type': 'text/plain',
-                'download_url': 'https://test.mobcraft.io/files/newfile',
+                'fileId': 'newfile',
+                'fileName': 'test.txt',
+                'fileSize': 11,
+                'mimeType': 'text/plain',
+                'downloadUrl': 'https://test.mobcraft.in/files/newfile',
                 'folder': '/',
-                'created_at': '2024-01-01T00:00:00.000Z',
+                'createdAt': '2024-01-01T00:00:00.000Z',
               },
             }),
             201,
@@ -448,7 +445,7 @@ void main() {
 
       final uploadStorage = MobcraftStorage(
         apiKey: 'test_api_key',
-        baseUrl: 'https://test.mobcraft.io',
+        baseUrl: 'https://test.mobcraft.in',
         httpClient: uploadMockClient,
       );
 
@@ -476,7 +473,7 @@ void main() {
 
       final authStorage = MobcraftStorage(
         apiKey: 'invalid_key',
-        baseUrl: 'https://test.mobcraft.io',
+        baseUrl: 'https://test.mobcraft.in',
         httpClient: authMockClient,
       );
 
@@ -490,24 +487,21 @@ void main() {
   group('TierInfo', () {
     test('fromJson creates correct instance', () {
       final json = {
-        'id': 'pro',
-        'name': 'Pro',
-        'storage_limit': 10737418240,
-        'storage_limit_formatted': '10 GB',
-        'file_size_limit': 104857600,
-        'file_size_limit_formatted': '100 MB',
-        'price': 9.99,
-        'currency': 'USD',
-        'billing_period': 'monthly',
+        'tier': 'pro',
+        'storageLimit': 10737418240,
+        'storageLimitFormatted': '10 GB',
+        'fileSizeLimit': 104857600,
+        'fileSizeLimitFormatted': '100 MB',
+        'priceMonthly': 9.99,
         'features': ['priority_support', 'api_access'],
-        'is_popular': true,
-        'is_current': false,
+        'isPopular': true,
+        'isCurrent': false,
       };
 
       final tier = TierInfo.fromJson(json);
 
       expect(tier.id, 'pro');
-      expect(tier.name, 'Pro');
+      expect(tier.name, 'PRO');
       expect(tier.price, 9.99);
       expect(tier.isPopular, true);
       expect(tier.isFree, false);
@@ -538,19 +532,19 @@ void main() {
   group('UsageBreakdown', () {
     test('fromJson creates correct instance', () {
       final json = {
-        'total_size': 10737418240,
-        'total_size_formatted': '10 GB',
-        'total_files': 500,
+        'totalSize': 10737418240,
+        'totalSizeFormatted': '10 GB',
+        'totalFiles': 500,
         'categories': {
           'images': {
             'size': 5368709120,
-            'size_formatted': '5 GB',
+            'sizeFormatted': '5 GB',
             'count': 300,
             'percentage': 50.0,
           },
           'documents': {
             'size': 2147483648,
-            'size_formatted': '2 GB',
+            'sizeFormatted': '2 GB',
             'count': 100,
             'percentage': 20.0,
           },

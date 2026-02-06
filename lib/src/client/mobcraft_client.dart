@@ -35,7 +35,7 @@ class MobcraftStorage {
   /// for testing or development purposes.
   MobcraftStorage({
     required this.apiKey,
-    this.baseUrl = 'https://storage.mobcraft.io',
+    this.baseUrl = 'https://storage.mobcraft.in',
     http.Client? httpClient,
   }) : _httpClient = httpClient ?? http.Client();
 
