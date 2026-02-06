@@ -287,7 +287,8 @@ class _StorageExamplePageState extends State<StorageExamplePage> {
                           ),
                           Chip(
                             label: Text(_quota!.tier.toUpperCase()),
-                            backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                            backgroundColor:
+                                Theme.of(context).colorScheme.primaryContainer,
                           ),
                         ],
                       ),
@@ -371,7 +372,8 @@ class _StorageExamplePageState extends State<StorageExamplePage> {
                                 tooltip: 'Download',
                               ),
                               IconButton(
-                                icon: const Icon(Icons.delete, color: Colors.red),
+                                icon:
+                                    const Icon(Icons.delete, color: Colors.red),
                                 onPressed: () => _deleteFile(file),
                                 tooltip: 'Delete',
                               ),

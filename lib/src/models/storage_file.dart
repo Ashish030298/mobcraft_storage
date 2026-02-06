@@ -106,7 +106,8 @@ class StorageFile {
   }
 
   @override
-  String toString() => 'StorageFile(id: $id, fileName: $fileName, fileSize: $fileSizeFormatted)';
+  String toString() =>
+      'StorageFile(id: $id, fileName: $fileName, fileSize: $fileSizeFormatted)';
 
   @override
   bool operator ==(Object other) =>

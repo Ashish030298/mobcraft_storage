@@ -106,13 +106,16 @@ class StorageQuota {
       storageUsed: storageUsed ?? this.storageUsed,
       storageLimit: storageLimit ?? this.storageLimit,
       storageUsedFormatted: storageUsedFormatted ?? this.storageUsedFormatted,
-      storageLimitFormatted: storageLimitFormatted ?? this.storageLimitFormatted,
+      storageLimitFormatted:
+          storageLimitFormatted ?? this.storageLimitFormatted,
       storagePercentage: storagePercentage ?? this.storagePercentage,
       filesCount: filesCount ?? this.filesCount,
       fileSizeLimit: fileSizeLimit ?? this.fileSizeLimit,
-      fileSizeLimitFormatted: fileSizeLimitFormatted ?? this.fileSizeLimitFormatted,
+      fileSizeLimitFormatted:
+          fileSizeLimitFormatted ?? this.fileSizeLimitFormatted,
       features: features ?? this.features,
-      subscriptionExpiresAt: subscriptionExpiresAt ?? this.subscriptionExpiresAt,
+      subscriptionExpiresAt:
+          subscriptionExpiresAt ?? this.subscriptionExpiresAt,
     );
   }
 
@@ -126,5 +129,6 @@ class StorageQuota {
   bool get isFull => storagePercentage >= 100;
 
   @override
-  String toString() => 'StorageQuota(tier: $tier, used: $storageUsedFormatted/$storageLimitFormatted)';
+  String toString() =>
+      'StorageQuota(tier: $tier, used: $storageUsedFormatted/$storageLimitFormatted)';
 }

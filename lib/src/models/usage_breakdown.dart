@@ -47,7 +47,8 @@ class UsageBreakdown {
       'totalSize': totalSize,
       'totalSizeFormatted': totalSizeFormatted,
       'totalFiles': totalFiles,
-      'categories': categories.map((key, value) => MapEntry(key, value.toJson())),
+      'categories':
+          categories.map((key, value) => MapEntry(key, value.toJson())),
     };
   }
 
@@ -67,7 +68,8 @@ class UsageBreakdown {
   }
 
   @override
-  String toString() => 'UsageBreakdown(totalFiles: $totalFiles, totalSize: $totalSizeFormatted)';
+  String toString() =>
+      'UsageBreakdown(totalFiles: $totalFiles, totalSize: $totalSizeFormatted)';
 }
 
 /// Represents usage statistics for a single category.
@@ -128,5 +130,6 @@ class UsageCategory {
   }
 
   @override
-  String toString() => 'UsageCategory(count: $count, size: $sizeFormatted, percentage: ${percentage.toStringAsFixed(1)}%)';
+  String toString() =>
+      'UsageCategory(count: $count, size: $sizeFormatted, percentage: ${percentage.toStringAsFixed(1)}%)';
 }

@@ -106,5 +106,6 @@ class PaginatedResponse<T> {
   bool get isNotEmpty => items.isNotEmpty;
 
   @override
-  String toString() => 'PaginatedResponse(items: ${items.length}, total: $total, page: $currentPage/$totalPages)';
+  String toString() =>
+      'PaginatedResponse(items: ${items.length}, total: $total, page: $currentPage/$totalPages)';
 }

@@ -96,7 +96,8 @@ class UploadResult {
   }
 
   @override
-  String toString() => 'UploadResult(fileId: $fileId, fileName: $fileName, downloadUrl: $downloadUrl)';
+  String toString() =>
+      'UploadResult(fileId: $fileId, fileName: $fileName, downloadUrl: $downloadUrl)';
 
   @override
   bool operator ==(Object other) =>

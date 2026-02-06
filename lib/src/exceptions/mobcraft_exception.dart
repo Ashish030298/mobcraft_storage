@@ -45,7 +45,8 @@ class AuthenticationException extends MobcraftException {
 class QuotaExceededException extends MobcraftException {
   /// Creates a new [QuotaExceededException].
   const QuotaExceededException({
-    super.message = 'Storage quota exceeded. Please upgrade your plan or delete some files.',
+    super.message =
+        'Storage quota exceeded. Please upgrade your plan or delete some files.',
     super.code = 'QUOTA_EXCEEDED',
     super.statusCode = 413,
   });
@@ -77,7 +78,8 @@ class FileNotFoundException extends MobcraftException {
 class NetworkException extends MobcraftException {
   /// Creates a new [NetworkException].
   const NetworkException({
-    super.message = 'A network error occurred. Please check your internet connection.',
+    super.message =
+        'A network error occurred. Please check your internet connection.',
     super.code = 'NETWORK_ERROR',
     super.statusCode,
   });
@@ -93,7 +95,8 @@ class NetworkException extends MobcraftException {
 class FileSizeLimitException extends MobcraftException {
   /// Creates a new [FileSizeLimitException].
   const FileSizeLimitException({
-    super.message = 'File size exceeds the maximum allowed limit for your tier.',
+    super.message =
+        'File size exceeds the maximum allowed limit for your tier.',
     super.code = 'FILE_SIZE_LIMIT',
     super.statusCode = 413,
   });

@@ -46,13 +46,15 @@ class FileUtils {
   /// Checks if a file name has an image extension.
   static bool isImage(String fileName) {
     final ext = getExtension(fileName).toLowerCase();
-    return ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg', 'ico'].contains(ext);
+    return ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg', 'ico']
+        .contains(ext);
   }
 
   /// Checks if a file name has a video extension.
   static bool isVideo(String fileName) {
     final ext = getExtension(fileName).toLowerCase();
-    return ['mp4', 'mov', 'avi', 'mkv', 'webm', 'flv', 'wmv', 'm4v'].contains(ext);
+    return ['mp4', 'mov', 'avi', 'mkv', 'webm', 'flv', 'wmv', 'm4v']
+        .contains(ext);
   }
 
   /// Checks if a file name has an audio extension.
@@ -64,7 +66,18 @@ class FileUtils {
   /// Checks if a file name has a document extension.
   static bool isDocument(String fileName) {
     final ext = getExtension(fileName).toLowerCase();
-    return ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'rtf', 'odt'].contains(ext);
+    return [
+      'pdf',
+      'doc',
+      'docx',
+      'xls',
+      'xlsx',
+      'ppt',
+      'pptx',
+      'txt',
+      'rtf',
+      'odt'
+    ].contains(ext);
   }
 
   /// Gets the category of a file based on its extension.

@@ -107,9 +107,11 @@ class TierInfo {
       id: id ?? this.id,
       name: name ?? this.name,
       storageLimit: storageLimit ?? this.storageLimit,
-      storageLimitFormatted: storageLimitFormatted ?? this.storageLimitFormatted,
+      storageLimitFormatted:
+          storageLimitFormatted ?? this.storageLimitFormatted,
       fileSizeLimit: fileSizeLimit ?? this.fileSizeLimit,
-      fileSizeLimitFormatted: fileSizeLimitFormatted ?? this.fileSizeLimitFormatted,
+      fileSizeLimitFormatted:
+          fileSizeLimitFormatted ?? this.fileSizeLimitFormatted,
       price: price ?? this.price,
       currency: currency ?? this.currency,
       billingPeriod: billingPeriod ?? this.billingPeriod,
@@ -130,5 +132,6 @@ class TierInfo {
   }
 
   @override
-  String toString() => 'TierInfo(name: $name, price: $priceFormatted, storage: $storageLimitFormatted)';
+  String toString() =>
+      'TierInfo(name: $name, price: $priceFormatted, storage: $storageLimitFormatted)';
 }

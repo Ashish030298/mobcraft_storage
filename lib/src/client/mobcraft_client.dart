@@ -252,7 +252,8 @@ class MobcraftStorage {
       queryParams['folder'] = FileUtils.normalizeFolderPath(folder);
     }
 
-    final uri = Uri.parse('$baseUrl/api/v1/files').replace(queryParameters: queryParams);
+    final uri = Uri.parse('$baseUrl/api/v1/files')
+        .replace(queryParameters: queryParams);
 
     final response = await _get(uri);
     _handleErrors(response);
