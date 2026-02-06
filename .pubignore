@@ -1,0 +1,15 @@
+# Build output
+build/
+.dart_tool/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/

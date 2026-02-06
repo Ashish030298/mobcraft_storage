@@ -1,0 +1,25 @@
+name: mobcraft_storage
+description: Flutter SDK for Mobcraft Storage - Telegram-based cloud storage with freemium tiers
+version: 1.0.0
+homepage: https://mobcraft.io
+repository: https://github.com/mobcraft/mobcraft_storage_flutter
+documentation: https://mobcraft.io/docs
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
+  http_parser: ^4.0.0
+  mime: ^1.0.0
+  path: ^1.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  mockito: ^5.4.0
+  build_runner: ^2.4.0
